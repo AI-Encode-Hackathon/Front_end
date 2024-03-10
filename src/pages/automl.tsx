@@ -7,6 +7,7 @@ import { InputComponent } from '../components/input';
 import { useNavigate } from "react-router-dom";
 import logo from '../assets/logo.jpg';
 import rightLogo from '../assets/right_logo.png';
+import Evaluation from '../components/evaluation';
 
 const MainContainer = styled.div`
   min-height: 100vh;
@@ -57,6 +58,9 @@ const Label = styled.label`
   const [onFileChange, setOnFileChange] = useState<File | null>(null);
   const [isSumitted, setIsSumitted] = useState(false);
 
+  const [evaluationData, setEvaluationData] = useState<any>('');
+
+
   const handleChangeMethod = (e: React.ChangeEvent<HTMLSelectElement>) => setClassificationMethod(e.target.value);
   const handleChangeLearningType = (e : React.ChangeEvent<HTMLSelectElement>) => setLearningType(e.target.value);
   const handleChangeTheshold = (e : React.ChangeEvent<HTMLInputElement>) => setThreshold(parseFloat(e.target.value));
@@ -106,7 +110,8 @@ const Label = styled.label`
 
         const responseData = await response.json();
         console.log('Response body:', responseData);
-        navigate("/evaluation");
+        setEvaluationData(responseData);
+        // navigate("/evaluation");
 
       } else {
         console.log('API request failed');
@@ -176,7 +181,7 @@ const Label = styled.label`
     </FormContainer>
 
     <ContentContainer>
-      <img src={rightLogo}></img>
+      <Evaluation data={evaluationData}  />
     </ContentContainer>
   </MainContainer>
   )

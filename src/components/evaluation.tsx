@@ -33,7 +33,11 @@ const Label = styled.label`
   font-weight: bold;
 `;
 
-export default function Evaluation() {
+type PropType = {
+  data: any; // replace 'any' with a more specific type if you can
+}
+
+export default function Evaluation({data}: PropType) {
 
   return (
 
@@ -43,27 +47,27 @@ export default function Evaluation() {
       <EvalutionWrapper >
         <Label>
           Accuracy:
-          <InputComponent inputValue={76}  />
+          <InputComponent inputValue={data}  />
         </Label>
 
         <Label>
           Training Method:
-          <InputComponent inputValue={"K Nearest Neighbours"}  />
+          <InputComponent inputValue={data}  />
         </Label>
 
         <Label>
           Training Time:
-          <InputComponent inputValue={5}  />
+          <InputComponent inputValue={data}  />
         </Label>
 
         <Label>
           Threshold:
-          <InputComponent inputValue={0.5}  />
+          <InputComponent inputValue={data}  />
         </Label>
 
         <Label>
           K Clusters:
-          <InputComponent inputValue={5}  />
+          <InputComponent inputValue={data}  />
         </Label>
 
         <ButtonComponent buttonLabel={"Download Machine Learning file"}></ButtonComponent>
