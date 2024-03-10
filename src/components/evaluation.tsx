@@ -47,27 +47,27 @@ export default function Evaluation({data}: PropType) {
       <EvalutionWrapper >
         <Label>
           Accuracy:
-          <InputComponent inputValue={data}  />
+          <InputComponent inputValue={data.accuracy}  />
         </Label>
 
         <Label>
           Training Method:
-          <InputComponent inputValue={data}  />
+          <InputComponent inputValue={data.training_method}  />
         </Label>
 
         <Label>
           Training Time:
-          <InputComponent inputValue={data}  />
+          <InputComponent inputValue={data.training_time}  />
         </Label>
 
         <Label>
           Threshold:
-          <InputComponent inputValue={data}  />
+          <InputComponent inputValue={data.threshold}  />
         </Label>
 
         <Label>
-          K Clusters:
-          <InputComponent inputValue={data}  />
+          Hyperparameter:
+          <InputComponent inputValue={data.hyperparameter}  />
         </Label>
 
         <ButtonComponent buttonLabel={"Download Machine Learning file"}></ButtonComponent>
