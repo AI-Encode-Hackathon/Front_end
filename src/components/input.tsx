@@ -17,5 +17,5 @@ export const Input = styled.input`
 `;
 
 export const InputComponent: React.FC<{inputValue?: number | string, handleChange?: (e:React.ChangeEvent<HTMLInputElement>) => void }> = ({inputValue, handleChange}) => (
-    <Input id="fname" name="fname" defaultValue={inputValue} onChange={handleChange} step="0.01" />
+    <Input id="fname" name="fname" defaultValue={inputValue} onChange={handleChange} />
 );

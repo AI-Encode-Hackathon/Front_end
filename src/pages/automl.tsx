@@ -89,8 +89,8 @@ const Label = styled.label`
       formData.append('labels', onFileChange);
     }
 
-    const url = 'http://0.0.0.0:8001/train_model';
-    const queryParams = `?training_method=${classificationMethod}&learning_class=${learningType}&learning_rate=${Number(hyperparameter)}&threshold=${Number(threshold)}`;
+    const url = 'http://localhost:8001/train_model';
+    const queryParams = `?learning_class=${classificationMethod}&training_method=${learningType}&k=${Number(hyperparameter)}}`;
 
     try {
       const response = await fetch(url + queryParams, {
